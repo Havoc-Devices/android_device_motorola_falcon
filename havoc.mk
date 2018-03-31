@@ -20,9 +20,14 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 # Inherit from falcon device
 $(call inherit-product, device/motorola/falcon/device.mk)
 
-# Device identifier. This must come after all inclusions
+# Inherit some common Havoc stuff.
+$(call inherit-product, vendor/havoc/config/common_full_phone.mk)
+
+PRODUCT_NAME := havoc_falcon
 PRODUCT_DEVICE := falcon
-PRODUCT_NAME := full_falcon
-PRODUCT_BRAND := motorola
-PRODUCT_MODEL := falcon
-PRODUCT_MANUFACTURER := motorola
+PRODUCT_MANUFACTURER := Motorola
+PRODUCT_BRAND := Motorola
+
+PRODUCT_GMS_CLIENTID_BASE := android-motorola
+
+TARGET_VENDOR := motorola
